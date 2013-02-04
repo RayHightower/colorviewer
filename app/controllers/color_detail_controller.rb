@@ -13,6 +13,19 @@ class ColorDetailController < UIViewController
     super
     self.view.backgroundColor = @color
     self.title = "Detail"
+
+    rightButton = UIBarButtonItem.alloc.initWithTitle("Change",
+                                                      style: UIBarButtonItemStyleBordered,
+                                                      target: self,   # could target be the same as the receiver?
+                                                      action: 'change_color')
+
+    self.navigationItem.rightBarButtonItem = rightButton
+
+  end
+
+  def change_color
+    puts "change_color invoked"
+    
   end
 
 end
