@@ -6,6 +6,7 @@ class ColorsController < UIViewController
     super
 
     self.view.backgroundColor = UIColor.whiteColor
+    self.title = "Did This w/o Reference!"
 
     @label = UILabel.alloc.initWithFrame(CGRectZero)
     @label.text = "Colors"
