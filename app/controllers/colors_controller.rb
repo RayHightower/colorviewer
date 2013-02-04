@@ -40,7 +40,9 @@ class ColorsController < UIViewController
 
   def tap_red
     puts "tap_red"
-    self.view.backgroundColor = UIColor.redColor
+    # self.view.backgroundColor = UIColor.redColor
+    controller = ColorDetailController.alloc.initWithColor(UIColor.redColor)
+    self.navigationController.pushViewController(controller, animated:true)
   end
 
   def tap_green
