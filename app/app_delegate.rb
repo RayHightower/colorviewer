@@ -7,7 +7,11 @@ class AppDelegate
     controller = ColorsController.alloc.initWithNibName(nil, bundle: nil)
     nav_controller = UINavigationController.alloc.initWithRootViewController(controller)
 
-    @window.rootViewController = nav_controller
+    tab_controller = UITabBarController.alloc.initWithNibName(nil, bundle:nil)
+    tab_controller.viewControllers = [nav_controller]
+
+    # @window.rootViewController = nav_controller
+    @window.rootViewController = tab_controller
 
     true
   end
