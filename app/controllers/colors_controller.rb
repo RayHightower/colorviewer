@@ -5,13 +5,13 @@ class ColorsController < UIViewController
 
     super
 
-    self.view.backgroundColor = UIcolor.whiteColor
+    self.view.backgroundColor = UIColor.whiteColor
 
     @label = UILabel.alloc.initWithFrame(CGRectZero)
     @label.text = "Colors"
     @label.sizeToFit
     @label.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2]
-    @label.autoresizingMask = (UIViweAutoresizingFlexibleBottommargin | UIViewAutoresizingFlexibleTopMargin)
+    @label.autoresizingMask = (UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin)
 
     self.view.addSubview(@label)    
 
