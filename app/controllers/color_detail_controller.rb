@@ -25,7 +25,13 @@ class ColorDetailController < UIViewController
 
   def change_color
     puts "change_color invoked"
-    
+
+    controller = ChangeColorController.alloc.initWithNibName(nil, bundle:nil)
+    controller.color_detail_controller = self
+    self.presentViewController(UINavigationController.alloc.initWithRootViewController(controller),
+                               animated: true,
+                               completion: lambda {})
+
   end
 
 end
