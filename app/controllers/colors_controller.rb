@@ -6,7 +6,7 @@ class ColorsController < UIViewController
     super
 
     self.view.backgroundColor = UIColor.whiteColor
-    self.title = "Did This w/o Reference!"
+    self.title = "Colors!"
 
     @label = UILabel.alloc.initWithFrame(CGRectZero)
     @label.text = "Colors"
@@ -15,6 +15,25 @@ class ColorsController < UIViewController
     @label.autoresizingMask = (UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin)
 
     self.view.addSubview(@label)    
+
+    ["red", "green", "blue"].each_with_index do |color_text, index|
+      color = UIColor.send("#{color_text}Color")
+      button_width = 80
+      button = UIButton.buttonWithType(UIButtonTypeRoundedRect)
+      button.setTitle(color_text, forState:UIControlStateNormal)
+      button.setTitleColor(color, forState:UIControlStateNormal)
+      button.sizeToFit
+      button.frame = [
+        [30 + index*(button_width + 10),
+         @label.frame.origin.y + button.frame.size.height + 30],
+         [80, button.frame.size.height]
+      ]
+      button.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin
+      button.addTarget(self, action:"tap_#{color_text}", forControlEvents:UIControlEventTouchUpInside)
+
+      self.view.addSubview(button)
+
+    end
 
 
   end
