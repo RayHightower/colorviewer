@@ -30,4 +30,10 @@ class ColorChangeController < UIViewController
                       forControlEvents:UIControlEventTouchUpInside)
   end
 
+  def change_color
+
+    puts "change_color invoked in color_change_controller.rb"
+    
+  end
+
 end
