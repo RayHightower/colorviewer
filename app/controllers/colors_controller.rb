@@ -40,14 +40,17 @@ class ColorsController < UIViewController
 
   def tap_red
     puts "tap_red"
+    self.view.backgroundColor = UIColor.redColor
   end
 
   def tap_green
     puts "tap_green"
+    self.view.backgroundColor = UIColor.greenColor
   end
 
   def tap_blue
     puts "tap_blue"
+    self.view.backgroundColor = UIColor.blueColor
   end
 
 end
