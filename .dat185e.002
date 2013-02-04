@@ -1,0 +1,8 @@
+self.textColor
+self.textColor = UIColor.tealColor
+self.textColor = UIColor.redColor
+quit
+quit
+quit
+quit
+3.times{quit}

@@ -37,5 +37,18 @@ class ColorsController < UIViewController
 
 
   end
+
+  def tap_red
+    puts "tap_red"
+  end
+
+  def tap_green
+    puts "tap_green"
+  end
+
+  def tap_blue
+    puts "tap_blue"
+  end
+
 end
 
