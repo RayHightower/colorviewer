@@ -1,21 +1,22 @@
 class ChangeColorController < UIViewController
 
-  # Is this how we tell RubyMotion about a controller that is further down the alphabetical compile chain?
+  # Is this how we tell RubyMotion about a controller that is further down the alphabetical compilation chain?
   attr_accessor :color_detail_controller
 
   def viewDidLoad
 
     super
 
-    self.title = "Change Color"
+    self.title = "Change Color Right Now!"
     self.view.backgroundColor = UIColor.whiteColor
 
     @text_field = UITextField.alloc.initWithFrame(CGRectZero)
     @text_field.borderStyle = UITextBorderStyleRoundedRect
     @text_field.textAlignment = UITextAlignmentCenter
     @text_field.placeholder = "Enter a color"
-    @text_field.center = [self.view.frame.size.width / 2,
-                          self.view.frame.size.width / 2 - 170]
+    @text_field.frame = [CGPointZero, [250,32]]
+
+    @text_field.center = [self.view.frame.size.width / 2, self.view.frame.size.height / 2 - 170]
 
     self.view.addSubview(@text_field)
 
@@ -42,7 +43,7 @@ class ChangeColorController < UIViewController
     if UIColor.respond_to?(color_method)
       color = UIColor.send("#{color_text}Color")
     else
-      @text_field.text = "Error!"
+      @text_field.text = "Hey User: Choose a real color!"
       return
     end
 
