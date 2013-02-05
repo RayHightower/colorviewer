@@ -1,4 +1,4 @@
-class ColorChangeController < UIViewController
+class ChangeColorController < UIViewController
 
   attr_accessor :color_detail_controller
 

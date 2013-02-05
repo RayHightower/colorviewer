@@ -24,7 +24,7 @@ class ColorDetailController < UIViewController
   end
 
   def change_color
-    puts "change_color invoked"
+    puts "change_color invoked in color_detail_controller.rb"
 
     controller = ChangeColorController.alloc.initWithNibName(nil, bundle:nil)
     controller.color_detail_controller = self
