@@ -1,5 +1,6 @@
 class ChangeColorController < UIViewController
 
+  # Is this how we tell RubyMotion about a controller that is further down the alphabetical compile chain?
   attr_accessor :color_detail_controller
 
   def viewDidLoad
@@ -33,6 +34,20 @@ class ChangeColorController < UIViewController
   def change_color
 
     puts "change_color invoked in color_change_controller.rb"
+
+    color_text = @text_field.text.downcase
+
+    color_method = "#{color_text}Color"
+
+    if UIColor.respond_to?(color_method)
+      color = UIColor.send("#{color_text}Color")
+    else
+      @text_field.text = "Error!"
+      return
+    end
+
+    self.color_detail_controller.view.backgroundColor = color
+    self.dismissViewControllerAnimated(true, completion:lambda {})
     
   end
 
