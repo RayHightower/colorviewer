@@ -1,4 +1,4 @@
-# Classes are compiled in alphabetical order. So you can't inherit from
+# Classes are compiled in alphabetical order. So you can't inherit from or interacti with
 # a class that hasn't been compiled yet!!!
 #
 class ColorDetailController < UIViewController
